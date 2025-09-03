@@ -89,3 +89,17 @@ p {
     display: none;
     
 }
+
+#textArea {
+    width: 100%;
+    height: 100px;
+    resize: none;
+}
+
+.fa-camera, .fa-location-dot {
+    color: black;
+    text-align: center;
+    padding: 5px;
+    font-size: 24px;
+    margin-right: 10px;
+}
