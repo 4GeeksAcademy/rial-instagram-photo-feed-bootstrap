@@ -6,25 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+        integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-    <link rel="stylesheet" href="style.css">
+    <!--<link rel="stylesheet" href="style.css">-->
     <script src="script.js" defer></script>
 
-    <title>Document</title>
+    <title>Instagram Photo Feed</title>
 </head>
 
 <body>
 
-    <div class="container main-container">
-        <div class="row header-row">
-            <div class="col-6 header-left">
-                <i class="fa-brands fa-instagram"></i>
-                <p>Instagram</p>
+    <div class="container">
+
+        <div class="row align-items-center m-2 bg-light p-3">
+            <div class="col d-flex justify-content-start">
+                <i class="fa-brands fa-instagram">
+                    Instagram
+                </i>
             </div>
-            <div class="col-6 header-right">
+
+            <div class="col d-flex justify-content-end">
+
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary my-btn" data-bs-toggle="modal"
-                    data-bs-target="#exampleModal">
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Create a new post
                 </button>
 
@@ -39,91 +48,450 @@
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <h5>Caption:</h5>
-                                <textarea name="Caption" id="textArea"></textarea>
-                                <div class="icons">
-                                    <i class="fa-solid fa-camera"></i>
-                                    <i class="fa-solid fa-location-dot"></i>
+                                <h6>Caption:</h6>
+                                <div class="input-group">
+                                    <!--<span class="input-group-text">With textarea</span>-->
+                                    <textarea class="form-control" aria-label="With textarea"
+                                        placeholder="Add the caption of your post here"></textarea>
+                                </div>
+                                <div class="row">
+                                    <div class="col-1 d-flex justify-content-center border bg-light mt-2 mx-3 p-2">
+                                        <i class="fa-solid fa-camera"></i>
+                                    </div>
+                                    <div class="col-1 d-flex justify-content-center border bg-light mt-2 p-2">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                    </div>
                                 </div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
+                                <button type="button" class="btn btn-primary">Publish</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2"
-                        data-bs-toggle="dropdown" aria-expanded="false">
+
+                <div class="btn-group ms-4">
+                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
                         <i class="fa-solid fa-gear"></i>
                     </button>
-                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-                        <li><a class="dropdown-item active" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item active" href="#">Profile</a></li>
+                        <li><a class="dropdown-item" href="#">Accesibility</a></li>
+                        <li><a class="dropdown-item" href="#">Privacy and Data</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="#">Separated link</a></li>
+                        <li><a class="dropdown-item text-danger" href="#">Log out</a></li>
                     </ul>
                 </div>
-            </div>
 
-        </div>
-    </div>
-    </div>
-
-    <div class="container change-container">
-        <div class="row change-row">
-            <div>
-                <img id="set3Grid" src="./images/grid.svg" alt="imagen">
-                <img id="set1Grid" src="./images/square.svg" alt="square">
             </div>
         </div>
+
+        <div class="row">
+
+            <nav>
+                <div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
+
+                    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
+                        type="button" role="tab" aria-controls="nav-home" aria-selected="true">
+                        <i id="grid-3" class="bi bi-grid-3x3 mx-3"></i>
+                    </button>
+
+                    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
+                        type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
+                        <i id="grid-1" class="bi bi-square-fill mx-3"></i>
+                    </button>
+
+                </div>
+            </nav>
+
+            <div class="tab-content" id="nav-tabContent">
+
+                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+
+                    <div class="container">
+
+                        <div class="row mb-3 mt-3">
+                            <div class="col-6 col-md-4">
+                                <img src="images/cerro-kennedy-sierra-nevada-de-santa-marta-31.jpg" width="100%"
+                                    alt="cerro_kennedy">
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <img src="images/ciudad-perdida-lost-city-colombia-30.jpg" width="100%"
+                                    alt="ciudad_perdida">
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <img src="images/Desierto-De-Tatacoa-Colombia.jpg" width="100%"
+                                    alt="desierto_de_tatacoa">
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-6 col-md-4">
+                                <img src="images/Leticia-Amazonas-Colombia.jpg" width="100%" alt="leticia_amazonas">
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <img src="images/Palomino-Sierra-Nevada-De-Santa-Marta-colombie-9.jpg" width="100%"
+                                    alt="palomino">
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <img src="images/parque-purace-colombia.jpg" width="100%" alt="parque_purace">
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-6 col-md-4">
+                                <img src="images/parque-tayrona-arrecifes-magdalena-colombia.jpg" width="100%"
+                                    alt="parque_arrecifes">
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <img src="images/parque-tayrona-playa-cristal-magdalena-colombia-4.jpg" width="100%"
+                                    alt="playa_cristal">
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <img src="images/Rio-Claro-Colombia.jpg" width="100%" alt="rio_claro">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+
+                    <div class="container">
+
+                        <div class="row d-block mt-3">
+
+                            <div class="col-md-6 offset-md-3 mb-3">
+                                <div class="card">
+                                    <div class="card-header d-flex">
+
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-6 text-start">
+                                                    <p class="mb-1 fw-bold">Cerro Kennedy</p>
+                                                </div>
+                                                <div class="col-6 text-end">
+                                                    <p class="mb-1 fw-bold">1/9</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="card">
+                                        <img src="images/cerro-kennedy-sierra-nevada-de-santa-marta-31.jpg" width="100%"
+                                            alt="cerro_kennedy">
+                                    </div>
+
+                                    <div class="card-footer">
+
+                                        <p class="text-start mb-1 fw-bold">180 Likes</p>
+
+                                        <p class="text-justify">
+                                            Esto es lo más mágico para mí. Es aún más alto que Minca. Estamos aquí a
+                                            3200m sobre el nivel del mar en el Cerro Kennedy Y como en Mundo Nuevo
+                                            tenemos una
+                                            vista de 360° sobre los picos nevados de la Sierra Nevada de Santa Marta en
+                                            frente de nosotros, y sobre el mar en el lado derecho.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6 offset-md-3 mb-3">
+                                <div class="card">
+                                    <div class="card-header d-flex">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-6 text-start">
+                                                    <p class="mb-1 fw-bold">Ciudad Perdida</p>
+                                                </div>
+                                                <div class="col-6 text-end">
+                                                    <p class="mb-1 fw-bold">2/9</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <img src="images/ciudad-perdida-lost-city-colombia-30.jpg" width="100%"
+                                            alt="ciudad_perdida">
+                                    </div>
+                                    <div class="card-footer">
+
+                                        <p class="text-start mb-1 fw-bold">230 Likes</p>
+
+                                        <p class="text-justify">
+                                            La Ciudad Perdida es un sitio arqueológico mítico en el corazón de la selva
+                                            colombiana conocido por sus increíbles vestigios donde el respeto a los
+                                            indígenas y a la naturaleza están a la orden del día. La Ciudad Perdida es
+                                            un
+                                            sitio arqueológico sagrado de la Sierra Nevada de Santa Marta. Fue fundada
+                                            entre
+                                            los siglos VII y VIII por la comunidad indígena Tayrona, que consideraba la
+                                            Sierra Nevada de Santa Marta como su mar y el corazón del mundo.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 offset-md-3 mb-3">
+                                <div class="card">
+                                    <div class="card-header d-flex">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-6 text-start">
+                                                    <p class="mb-1 fw-bold">Desierto de Tatacoa</p>
+                                                </div>
+                                                <div class="col-6 text-end">
+                                                    <p class="mb-1 fw-bold">3/9</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <img src="images/Desierto-De-Tatacoa-Colombia.jpg" width="100%"
+                                            alt="desierto_de_tatacoa">
+                                    </div>
+                                    <div class="card-footer">
+                                        <p class="text-start mb-1 fw-bold">130 Likes</p>
+
+                                        <p class="text-justify">
+                                            Vayamos a Desierto de la Tatacoa que es totalmente diferente a cualquier
+                                            otra
+                                            cosa que se pueda ver en Colombia. Algunos lo llaman el Gran Cañón de
+                                            Colombia.
+                                            Bueno... En una escala realmente menor, pero para los amantes del paisaje
+                                            realmente vale la pena pasar la noche allí. También es famoso por la
+                                            fotografía
+                                            nocturna.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 offset-md-3 mb-3">
+                                <div class="card">
+                                    <div class="card-header d-flex">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-6 text-start">
+                                                    <p class="mb-1 fw-bold">Leticia Amazonas</p>
+                                                </div>
+                                                <div class="col-6 text-end">
+                                                    <p class="mb-1 fw-bold">4/9</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <img src="images/Leticia-Amazonas-Colombia.jpg" width="100%"
+                                            alt="leticia_amazonas">
+                                    </div>
+                                    <div class="card-footer">
+                                        <p class="text-start mb-1 fw-bold">165 Likes</p>
+
+                                        <p class="text-justify">
+                                            Si vas por ahí Leticia en el Amazonas, disfrutarás de otro tipo de paisajes,
+                                            especialmente de una puesta de sol sobre el río Amazonas.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 offset-md-3 mb-3">
+                                <div class="card">
+                                    <div class="card-header d-flex">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-6 text-start">
+                                                    <p class="mb-1 fw-bold">Palomino</p>
+                                                </div>
+                                                <div class="col-6 text-end">
+                                                    <p class="mb-1 fw-bold">5/9</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <img src="images/Palomino-Sierra-Nevada-De-Santa-Marta-colombie-9.jpg"
+                                            width="100%" alt="palomino">
+                                    </div>
+                                    <div class="card-footer">
+                                        <p class="text-start mb-1 fw-bold">248 Likes</p>
+
+                                        <p class="text-justify">
+                                            Paisajes de los alrededores Palomino son asombrosas. Puedes disfrutar de la
+                                            puesta de sol, el sol, pero también puedes hacer fotos realmente hermosas en
+                                            el
+                                            lado del río de Palomino. Para un consejo profesional, es el único lugar
+                                            donde
+                                            se puede enfriar una vista sobre el mar, las palmeras, el río y en el fondo:
+                                            los
+                                            majestuosos picos nevados de la Sierra Nevada de Santa Marta.
+                                            Definitivamente en
+                                            mi lista de paisajes preferidos en Colombia.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 offset-md-3 mb-3">
+                                <div class="card">
+                                    <div class="card-header d-flex">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-6 text-start">
+                                                    <p class="mb-1 fw-bold">Parque Purace</p>
+                                                </div>
+                                                <div class="col-6 text-end">
+                                                    <p class="mb-1 fw-bold">6/9</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <img src="images/parque-purace-colombia.jpg" width="100%" alt="parque_purace">
+                                    </div>
+                                    <div class="card-footer">
+                                        <p class="text-start mb-1 fw-bold">302 Likes</p>
+
+                                        <p class="text-justify">
+                                            Un poco más lejos, en el sur de los Andes, se encuentra el Parque de Purace.
+                                            Descubrirás la esencia de Colombia: los páramos. Es en estos páramos que se
+                                            genera toda el agua para todo el país. Un lugar mágico que hay que ver para
+                                            entender mejor la naturaleza de Colombia. Esta foto fue tomada en los
+                                            Termales
+                                            de San Juan.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 offset-md-3 mb-3">
+                                <div class="card">
+                                    <div class="card-header d-flex">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-6 text-start">
+                                                    <p class="mb-1 fw-bold">Arrecifes</p>
+                                                </div>
+                                                <div class="col-6 text-end">
+                                                    <p class="mb-1 fw-bold">7/9</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <img src="images/parque-tayrona-arrecifes-magdalena-colombia.jpg" width="100%"
+                                            alt="parque_arrecifes">
+                                    </div>
+                                    <div class="card-footer">
+                                        <p class="text-start mb-1 fw-bold">216 Likes</p>
+
+                                        <p class="text-justify">
+                                            Definitivamente uno de los lugares más hermosos de Colombia, Parque Tayrona
+                                            es
+                                            el destino que lo tiene todo para todos. Si quieres dedicarte a contemplar
+                                            la
+                                            naturaleza. En un espacio reducido podrás ver una gran variedad de paisajes,
+                                            entre playas, selva y alta montaña.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 offset-md-3 mb-3">
+                                <div class="card">
+                                    <div class="card-header d-flex">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-6 text-start">
+                                                    <p class="mb-1 fw-bold">Playa Cristal</p>
+                                                </div>
+                                                <div class="col-6 text-end">
+                                                    <p class="mb-1 fw-bold">8/9</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <img src="images/parque-tayrona-playa-cristal-magdalena-colombia-4.jpg"
+                                            width="100%" alt="playa_cristal">
+                                    </div>
+                                    <div class="card-footer">
+                                        <p class="text-start mb-1 fw-bold">193 Likes</p>
+
+                                        <p class="text-justify">
+                                            Esta, por desgracia, es bastante famosa, pero la playa más fotogénica de
+                                            Parque
+                                            Tayrona: Playa Cristal. Al igual que Bahía Concha, no puedes acceder a ella
+                                            desde la entrada principal del Parque Tayrona. Tendrás que llegar en un taxi
+                                            privado (no vayas caminando, morirás bajo el sol), o en barco desde Santa
+                                            Marta
+                                            o Taganga. Te aconsejo que llegues muy temprano por la mañana, como hice yo
+                                            para
+                                            conseguir esta foto sin nadie.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 offset-md-3 mb-3">
+                                <div class="card">
+                                    <div class="card-header d-flex">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-6 text-start">
+                                                    <p class="mb-1 fw-bold">Rio Claro</p>
+                                                </div>
+                                                <div class="col-6 text-end">
+                                                    <p class="mb-1 fw-bold">9/9</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <img src="images/Rio-Claro-Colombia.jpg" width="100%" alt="rio_claro">
+                                </div>
+                                <div class="card-footer">
+                                    <p class="text-start mb-1 fw-bold">161 Likes</p>
+
+                                    <p class="text-justify">
+                                        Es el último lugar por descubrir ahora. ¡¡¡Muchos turistas se lo perderán
+                                        durante sus vacaciones en Colombia, pero los colombianos saben que es
+                                        maravilloso!!! Me refiero a Río Claro en Antioquia. Es un parque increíble donde
+                                        se pueden practicar muchas actividades ecoturísticas. Si llegas allí, no te
+                                        pierdas la experiencia de la cueva para ver el pájaro Guacharo, ¡asombroso!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <!--<div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>-->
+        </div>
+
     </div>
 
-    <div class="container grid-container" id="myGrid">
-
-        <div class="grid-item">
-            <img class="img" src="./images/collage-de-fondo-de-programacion (1).jpg" alt="img1">
-            <p class="text hidden">Comentario de imagen 1</p>
+    <div class="container">
+        <div class="row">
+            <div class="col d-flex justify-content-center">
+                <p>Fuente de las imagenes y descripciones: https://tristanphotos.com/es/colombia-paisajes/</p>
+            </div>
         </div>
-        <div class="grid-item">
-            <img class="img" src="./images/collage-de-fondo-de-programacion.jpg" alt="img2">
-            <p class="text hidden">Comentario de imagen 2</p>
-        </div>
-        <div class="grid-item">
-            <img class="img" src="./images/dean-pugh-wke_KHh-_A0-unsplash.jpg" alt="img3">
-            <p class="text hidden">Comentario de imagen 3</p>
-        </div>
-        <div class="grid-item">
-            <img class="img" src="./images/growtika-FQ3lFA4Zi58-unsplash.jpg" alt="img4">
-            <p class="text hidden">Comentario de imagen 4</p>
-        </div>
-        <div class="grid-item">
-            <img class="img" src="./images/jackson-sophat-_t-l5FFH8VA-unsplash.jpg" alt="img5">
-            <p class="text hidden">Comentario de imagen 5</p>
-        </div>
-        <div class="grid-item">
-            <img class="img" src="./images/markus-spiske-KDBWMSq9wh0-unsplash.jpg" alt="img6">
-            <p class="text hidden">Comentario de imagen 6</p>
-        </div>
-        <div class="grid-item">
-            <img class="img" src="./images/persona-frente-computadora-trabajando-html.jpg" alt="img7">
-            <p class="text hidden">Comentario de imagen 7</p>
-        </div>
-        <div class="grid-item">
-            <img class="img" src="./images/image_3.jpg" alt="img8">
-            <p class="text hidden">Comentario de imagen 8</p>
-        </div>
-        <div class="grid-item">
-            <img class="img" src="./images/valery-sysoev-p9OkL4yW3C8-unsplash.jpg" alt="img9">
-            <p class="text hidden">Comentario de imagen 9</p>
-        </div>
-
     </div>
-
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
@@ -131,6 +499,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
         crossorigin="anonymous"></script>
+
 </body>
 
 </html>
